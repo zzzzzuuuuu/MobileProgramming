@@ -16,21 +16,21 @@ class MainActivity : AppCompatActivity() { // 상속 받음
          setContentView(R.layout.activity_main) // Resource 클래스
 
         // 예전
-        val text1 : TextView =  findViewById(R.id.textSay)
-        val button1 : Button = findViewById(R.id.btnSay)
-
-        // 버튼 눌렀을 때 텍스트가 바뀌도록
-        button1.setOnClickListener {
-            text1.setText("Hello Kotlin!!!")
-        }
+//        val text1 : TextView =  findViewById(R.id.textSay)
+//        val button1 : Button = findViewById(R.id.btnSay)
+//
+//        // 버튼 눌렀을 때 텍스트가 바뀌도록
+//        button1.setOnClickListener {
+//            text1.setText("Hello Kotlin!!!")
+//        }
 
         // 현재
-//        val binding = ActivityMainBinding.inflate(layoutInflater) // binding을 이용하면 변수 하나만 쓰면 됨
-//        setContentView(binding.root)
-//
-//        binding.btnSay.setOnClickListener {
-//            binding.textSay.text = "Hello Kotiln!!!"
-//        }
+        val binding = ActivityMainBinding.inflate(layoutInflater) // binding을 이용하면 변수 하나만 쓰면 됨
+        setContentView(binding.root)
+
+        binding.btnSay.setOnClickListener {
+            binding.textSay.text = "Hello Kotiln!!!"
+        }
 
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
