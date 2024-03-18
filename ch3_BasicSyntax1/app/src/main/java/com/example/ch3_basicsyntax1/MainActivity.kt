@@ -10,20 +10,22 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        Log.d("BasicSyntax1", "로그를 출력합니다. method =  Log.d") // log debug
+        var mutableList = mutableListOf("MON", "TUE", "WED")
+        mutableList.add("THU")
+        Log.d("Collection", "mutableList의 첫 번째 값은 ${mutableList.get(0)}입니다.")
+        Log.d("Collection", "mutableList의 두 번째 값은 ${mutableList.get(1)}입니다.")
 
-        var myName = "홍길동"
-        var myAge : Int
-        myAge = 27
-        myAge = myAge + 1
-        Log.d("BasicSyntax1", "myName = $myName, myAge = $myAge")
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+        var stringList = mutableListOf<String>() // 문자열로 된 빈 컬렉션 생성
+        stringList.add("월")
+        stringList.add("화")
+        stringList.add("수")
+        stringList.set(1, "요일 변경")
+        Log.d("Collection", "stringList에 입력된 두 번째 값은 ${stringList.get(1)}입니다.")
+
+        stringList.removeAt(1) // 두 번째 값 삭제
+        Log.d("Collection", "stringList에 입력된 두 번째 값은 ${stringList.get(1)}입니다.")
+        Log.d("Collection", "stringList에는 ${stringList.size}개의 값이 있습니다.")
     }
 }
