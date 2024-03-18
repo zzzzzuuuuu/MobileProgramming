@@ -27,5 +27,31 @@ class MainActivity : AppCompatActivity() {
         stringList.removeAt(1) // 두 번째 값 삭제
         Log.d("Collection", "stringList에 입력된 두 번째 값은 ${stringList.get(1)}입니다.")
         Log.d("Collection", "stringList에는 ${stringList.size}개의 값이 있습니다.")
+
+
+        for (index in 1..10) {
+            Log.d("For", "현재 숫자는 ${index}")
+        }
+
+        var array = arrayOf("Jan", "Feb", "Mar", "Apr", "May", "Jun")
+        for (index in 0 until array.size) {
+            Log.d("For", "현재 월은 ${array.get(index)}입니다.")
+        }
+
+        for (index in 0..10 step 3) {
+            Log.d("For", "건너뛰기: ${index}")
+        }
+
+        for (index in 10 downTo 0) {
+            Log.d("For", "감소시키기: ${index}")
+        }
+
+        for (index in 10 downTo 0 step 3) {
+            Log.d("For", "건너면서 감소시키기: ${index}")
+        }
+
+        for (month in array) {
+            Log.d("For", "현재 월은 ${month}입니다.")
+        }
     }
 }
