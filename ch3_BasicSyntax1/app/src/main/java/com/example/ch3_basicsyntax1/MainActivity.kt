@@ -9,8 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState) // 부모의 onCreate 실행시키기 위해
+        setContentView(R.layout.activity_main) // 내가 추가할
 
         var mutableList = mutableListOf("MON", "TUE", "WED")
         mutableList.add("THU")
@@ -53,5 +53,17 @@ class MainActivity : AppCompatActivity() {
         for (month in array) {
             Log.d("For", "현재 월은 ${month}입니다.")
         }
+
+        testStringExtension()
+    }
+
+    fun testStringExtension() {
+        var original : String = "Hello" // String 생략 가능
+        var added : String = " Guys~" // String 생략 가능
+        Log.d("Extension", "added를 더한 값은 ${original.plus(added)}입니다.")
+    }
+    // String에는 plus라는 메서드가 없으므로 확장해주기
+    fun String.plus(word: String) : String {
+        return this + word
     }
 }
