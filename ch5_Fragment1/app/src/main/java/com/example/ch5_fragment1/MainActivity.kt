@@ -16,9 +16,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setFragmemt() {
-        val listFragment = ListFragment()
+        val listFragment = ListFragment() // 이 때 생성됨
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frameLayout, listFragment)
         transaction.commit()
+    }
+
+    fun goDetail() {
+        val detailFragment = DetailFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frameLayout, detailFragment)
+        transaction.commit()
+    }
+
+    fun goBack() {
+        onBackPressed()
     }
 }

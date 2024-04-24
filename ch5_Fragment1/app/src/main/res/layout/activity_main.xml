@@ -13,8 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="1dp"
         android:text="Main Activity"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,18 +24,32 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="409dp"
-        android:layout_height="634dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentLayout"
-            android:name="com.example.ch5_fragment1.ListFragment"
-            android:layout_width="match_parent"
-            android:layout_height="712dp"
-            tools:layout="@layout/fragment_list" />
     </FrameLayout>
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/frameLayout"-->
+    <!--        android:layout_width="409dp"-->
+    <!--        android:layout_height="634dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView">-->
+
+    <!--        <androidx.fragment.app.FragmentContainerView-->
+    <!--            android:id="@+id/fragmentLayout"-->
+    <!--            android:name="com.example.ch5_fragment1.ListFragment"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="712dp"-->
+    <!--            tools:layout="@layout/fragment_list" />-->
+    <!--    </FrameLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
