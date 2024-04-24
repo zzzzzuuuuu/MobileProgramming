@@ -12,20 +12,29 @@ class ListFragment : Fragment() {
 
     var mainActivity : MainActivity? = null
 
+    lateinit var binding: FragmentListBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentListBinding.inflate(inflater, container, false)
+        binding = FragmentListBinding.inflate(inflater, container, false)
         binding.btnNext.setOnClickListener {
             mainActivity?.goDetail() // null이 아니면 mainActivity의 goDetail()을 불러라
         }
+
+        binding.textTitle.text = arguments?.getString("key1")
+        binding.textValue.text = "${arguments?.getInt("key2")}" // string으로 변환
         return binding.root
     }
 
     override fun onAttach(context: Context) { // onCreateView 보다 먼저 동작함 onAttach -> oncreate -> onCreateView
         super.onAttach(context)
         if (context is MainActivity) mainActivity = context
+    }
+
+    fun setValue(value: String) {
+        binding.textFromActivity.text = value
     }
 }
