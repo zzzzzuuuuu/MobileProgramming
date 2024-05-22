@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // 초기화 및 등록
-        activityResult = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted -> // it 대신 씀, 생략가능
+        activityResult = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted -> // it 대신 씀, it 쓰면 생략가능
             if (isGranted) {
                 startProcess()
             } else {
